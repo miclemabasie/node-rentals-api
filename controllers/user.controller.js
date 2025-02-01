@@ -1,4 +1,5 @@
 import User from "../models/User.js";
+import { errorHandler } from "../utils/error.js";
 
 // list all users in the system
 export const listUsers = async (req, res, next) => {
@@ -8,9 +9,4 @@ export const listUsers = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-};
-
-export const createUser = (req, res) => {
-  console.log(req.body);
-  res.send("creating User");
 };

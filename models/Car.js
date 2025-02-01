@@ -12,6 +12,11 @@ const carSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  isFeatured: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
   location: {
     type: String,
     required: true,
