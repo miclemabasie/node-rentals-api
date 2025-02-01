@@ -4,6 +4,7 @@ import User from "../models/User.js";
 import { errorHandler } from "../utils/error.js";
 
 export const listProperties = async (req, res) => {
+  console.log("getting all the properties");
   try {
     const properties = await Property.find();
     res.status(200).json(properties);
