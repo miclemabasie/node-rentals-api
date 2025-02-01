@@ -1,7 +1,9 @@
+import mongoose from "mongoose";
 import User from "../models/User.js";
 import Land from "../models/Land.js";
+import { errorHandler } from "../utils/error.js";
 
-export const Land = async (req, res) => {
+export const listLand = async (req, res) => {
   try {
     const lands = await Land.find();
     res.status(200).json(lands);
@@ -10,7 +12,8 @@ export const Land = async (req, res) => {
 
 export const createLand = async (req, res, next) => {
   try {
-    const { name, description, price, location, owner } = req.body;
+    const { name, description, price, location, owner, width, length } =
+      req.body;
 
     // validate the owner's ID
     if (!mongoose.Types.ObjectId.isValid(owner)) {
@@ -29,6 +32,8 @@ export const createLand = async (req, res, next) => {
       description,
       price,
       location,
+      width,
+      length,
       owner,
     });
     await newLand.save();

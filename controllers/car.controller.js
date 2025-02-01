@@ -1,6 +1,7 @@
+import mongoose from "mongoose";
 import User from "../models/User.js";
 import Car from "../models/Car.js";
-
+import { errorHandler } from "../utils/error.js";
 export const listCar = async (req, res) => {
   try {
     const cars = await Car.find();

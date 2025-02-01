@@ -21,6 +21,16 @@ const LandSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  width: {
+    type: Number,
+    required: false,
+    default: 0.0,
+  },
+  length: {
+    type: Number,
+    required: false,
+    default: 0.0,
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
