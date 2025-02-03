@@ -12,7 +12,7 @@ export const listLand = async (req, res) => {
 
 export const createLand = async (req, res, next) => {
   try {
-    const { name, description, price, location, owner, width, length } =
+    const { name, description, price, location, owner, width, image, length } =
       req.body;
 
     // validate the owner's ID
@@ -35,6 +35,7 @@ export const createLand = async (req, res, next) => {
       width,
       length,
       owner,
+      image,
     });
     await newLand.save();
     res.status(201).json({

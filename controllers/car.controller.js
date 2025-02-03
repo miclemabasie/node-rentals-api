@@ -11,7 +11,7 @@ export const listCar = async (req, res) => {
 
 export const createCar = async (req, res, next) => {
   try {
-    const { name, description, price, location, owner } = req.body;
+    const { name, description, price, location, image, owner } = req.body;
 
     // validate the owner's ID
     if (!mongoose.Types.ObjectId.isValid(owner)) {
@@ -31,6 +31,7 @@ export const createCar = async (req, res, next) => {
       price,
       location,
       owner,
+      image,
     });
     await newCar.save();
     res.status(201).json({

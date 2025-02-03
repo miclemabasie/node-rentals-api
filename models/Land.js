@@ -31,6 +31,12 @@ const LandSchema = new mongoose.Schema({
     required: false,
     default: 0.0,
   },
+  image: {
+    type: String,
+    required: false,
+    default:
+      "https://images.pexels.com/photos/46160/field-clouds-sky-earth-46160.jpeg?auto=compress&cs=tinysrgb&w=600",
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

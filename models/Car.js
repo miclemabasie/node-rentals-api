@@ -21,6 +21,12 @@ const carSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  image: {
+    type: String,
+    required: true,
+    default:
+      "https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=600",
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
